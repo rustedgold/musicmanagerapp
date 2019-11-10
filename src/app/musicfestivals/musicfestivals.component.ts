@@ -8,20 +8,19 @@ import { MusicmanagerService } from "../service/musicmanager.service";
 })
 export class MusicfestivalsComponent implements OnInit {
   location = "india";
-  Festival: any = [];
+  festivals:any=[];
 
   constructor(
     public mservice: MusicmanagerService
   ) { }
 
   ngOnInit() {
-    this.loadMusicFestivals()
+    this.loadMusicFestivalsResponse();
   }
 
-  // Get employees list
-  loadMusicFestivals() {
+  loadMusicFestivalsResponse() {
     return this.mservice.loadAllMusicFestivals(this.location).subscribe((data: {}) => {
-      this.Festival = data;
+      this.festivals = data['festivals'];
     })
   }
 }
