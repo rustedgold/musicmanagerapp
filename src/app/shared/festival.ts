@@ -1,6 +1,6 @@
 import { Band } from './band';
 
-export class MusicFestival {
+export class Festival {
 	festivalId: String;
 	festivalName: String;
 	festivalLocation: String;

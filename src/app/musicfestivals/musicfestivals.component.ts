@@ -8,7 +8,7 @@ import { MusicmanagerService } from "../service/musicmanager.service";
 })
 export class MusicfestivalsComponent implements OnInit {
   location = "india";
-  MusicFestival: any = [];
+  Festival: any = [];
 
   constructor(
     public mservice: MusicmanagerService
@@ -21,7 +21,7 @@ export class MusicfestivalsComponent implements OnInit {
   // Get employees list
   loadMusicFestivals() {
     return this.mservice.loadAllMusicFestivals(this.location).subscribe((data: {}) => {
-      this.MusicFestival = data;
+      this.Festival = data;
     })
   }
 }
