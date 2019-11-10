@@ -1,2 +1,33 @@
 <p>musicfestivals works!</p>
-np
+<div class="container custom-container-2">
+
+  <div class="no-data text-center" *ngIf="MusicFestival.length == 0">
+    <p>There is no festivals added yet!</p>
+  </div>
+
+  <div *ngIf="MusicFestival.length !== 0">
+    <h3 class="mb-3 text-center">Festival List</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Festival Id</th>
+            <th scope="col">Festival Name</th>
+            <th scope="col">Festival Location</th>
+            <th scope="col">Band Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let mfestival of MusicFestival">
+            <td>{{mfestival.festivalId}}</td>
+            <td>{{mfestival.festivalName}}</td>
+            <td>{{mfestival.festivalLocation}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>

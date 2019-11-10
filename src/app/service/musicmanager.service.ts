@@ -20,7 +20,8 @@ export class MusicmanagerService {
 
   private extractData(res: Response) {
     let body = res;
-    return body || { };
+    console.log("Response in the call: "+body);
+    return body;
   }
 
   loadAllMusicFestivals(location): Observable<any> {
