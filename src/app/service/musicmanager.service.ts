@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { map, catchError, tap } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { retry, map, catchError } from 'rxjs/operators';
+import { Festival } from '../shared/festival';
 
 const endpoint = 'https://musicrecords.herokuapp.com/app/';
 
@@ -19,7 +20,7 @@ export class MusicmanagerService {
   constructor(private http: HttpClient) {}
 
   private extractData(res: Response) {
-    let body = res;
+    let body = res.json;
     console.log("Response in the call: "+body);
     return body;
   }
@@ -29,14 +30,15 @@ export class MusicmanagerService {
       map(this.extractData));
   }
 
-  private handleError<T> (operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-
-      console.error(error); 
-
-      console.log(`${operation} failed: ${error.message}`);
-
-      return of(result as T);
-    };
+   // Error handling 
+  handleError(error) {
+     let errorMessage = '';
+     if(error.error instanceof ErrorEvent) {
+       errorMessage = error.error.message;
+     } else {
+       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+     }
+     window.alert(errorMessage);
+     return throwError(errorMessage);
   }
 }

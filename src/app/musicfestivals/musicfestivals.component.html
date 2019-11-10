@@ -1,11 +1,11 @@
 <p>Let the Celebrations Begin!!</p>
 <div class="container custom-container-2">
 
-  <div class="no-data text-center" *ngIf="Festival.length == 0">
+  <div class="no-data text-center" *ngIf="festivals.length == 0">
     <p>There is no festivals added yet!</p>
   </div>
 
-  <div *ngIf="Festival.length !== 0">
+  <div *ngIf="festivals.length !== 0">
     <h3 class="mb-3 text-center">Festival List</h3>
 
     <div class="col-md-12">
@@ -19,13 +19,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let mfestival of Festival">
+          <tr *ngFor="let mfestival of festivals">
             <td>{{mfestival.festivalId}}</td>
             <td>{{mfestival.festivalName}}</td>
             <td>{{mfestival.festivalLocation}}</td>
             <!-- <td>Band Details
             <tr *ngFor="let mfestival of Festival"></tr>
-
             </td> -->
           </tr>
         </tbody>
