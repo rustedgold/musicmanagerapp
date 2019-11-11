@@ -1,6 +1,6 @@
 <p>Let the Celebrations Begin!!</p>
 <div class="container custom-container-2">
-
+  <h2>Displaying Music festivals for location :{{location}}</h2>
   <div class="no-data text-center" *ngIf="festivals.length == 0">
     <p>There is no festivals added yet!</p>
   </div>
@@ -23,9 +23,28 @@
             <td>{{mfestival.festivalId}}</td>
             <td>{{mfestival.festivalName}}</td>
             <td>{{mfestival.festivalLocation}}</td>
-            <!-- <td>Band Details
-            <tr *ngFor="let mfestival of Festival"></tr>
-            </td> -->
+            <td>Band Details
+          <tr *ngFor="let band of mfestival.bands">
+            <td>{{band.bandName}}</td>
+            <td>{{band.bandLocation}}</td>
+            <td>
+          <tr *ngFor="let bandMember of band.bandMembers">
+            <td>{{bandMember.name}}</td>
+            <td>{{bandMember.address}}</td>
+            <td>{{bandMember.contact}}</td>
+            <td>{{bandMember.age}}</td>
+            <td>{{bandMember.gender}}</td>
+            <td>{{bandMember.activeMember}}</td>
+          </tr>
+          </td>
+          <td>
+            <tr>Label Details
+              <td>{{band.label.labelOwner}}</td>
+              <td>{{band.label.labelContact}}</td>
+            </tr>
+          </td>
+          </tr>
+          </td>
           </tr>
         </tbody>
       </table>

@@ -20,9 +20,7 @@ export class MusicmanagerService {
   constructor(private http: HttpClient) {}
 
   private extractData(res: Response) {
-    let body = res.json;
-    console.log("Response in the call: "+body);
-    return body;
+    return res;
   }
 
   loadAllMusicFestivals(location): Observable<any> {
