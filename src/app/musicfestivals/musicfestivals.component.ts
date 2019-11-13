@@ -7,8 +7,8 @@ import { MusicmanagerService } from "../service/musicmanager.service";
   styleUrls: ['./musicfestivals.component.css']
 })
 export class MusicfestivalsComponent implements OnInit {
-  location = "india";
-  festivals:any=[];
+  name = "Casablanca";
+  labels:any=[];
 
   constructor(
     public mservice: MusicmanagerService
@@ -19,8 +19,8 @@ export class MusicfestivalsComponent implements OnInit {
   }
 
   loadMusicFestivalsResponse() {
-    return this.mservice.loadAllMusicFestivals(this.location).subscribe((data: {}) => {
-      this.festivals = data['festivals'];
+    return this.mservice.loadAllMusicFestivals(this.name).subscribe((data: {}) => {
+      this.labels = data['labels'];
     })
   }
 }

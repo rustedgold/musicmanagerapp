@@ -24,7 +24,7 @@ export class MusicmanagerService {
   }
 
   loadAllMusicFestivals(location): Observable<any> {
-    return this.http.get(endpoint + 'loadAllMusicFestivals/' + location).pipe(
+    return this.http.get(endpoint + 'loadAllLabels/' + location).pipe(
       map(this.extractData));
   }
 
