@@ -9,7 +9,7 @@
     <h3 class="mb-3 text-center">Festival List</h3>
 
     <div class="col-md-12">
-      <table class="table table-bordered">
+      <table class=".table-dark table-bordered">
         <thead>
           <tr>
             <th scope="col">Owner</th>
@@ -24,26 +24,14 @@
             <td>
           <tr *ngFor="let band of mlabel.bands">
             <td>{{band.bandName}}</td>
-            <td>{{band.bandLocation}}</td>
-            <td>{{band.bandPrimaryContact}}</td>
-            <td>{{band.bandManager}}</td>
-            <td>{{band.bandLocation}}</td>
             <td>
-          <tr *ngFor="let bandMember of band.bandMembers">
+          <!-- <tr *ngFor="let bandMember of band.bandMembers">
             <td>{{bandMember.name}}</td>
-            <td>{{bandMember.address}}</td>
-            <td>{{bandMember.contact}}</td>
-            <td>{{bandMember.age}}</td>
-            <td>{{bandMember.gender}}</td>
-            <td>{{bandMember.activeMember}}</td>
-          </tr>
+          </tr> -->
           </td>
           <td>
             <tr *ngFor="let festival of band.festivals">
-              <td>{{festival.festivalId}}</td>
               <td>{{festival.festivalName}}</td>
-              <td>{{festival.festivalLocation}}</td>
-              <td>{{festival.noOfAudience}}</td>
             </tr>
           </td>
           </tr>
