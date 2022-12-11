@@ -24,7 +24,7 @@
     "@angular/platform-browser-dynamic": "~8.0.0",
     "@angular/router": "~8.0.0",
     "bootstrap": "^4.3.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "node": "12.13.0",
     "npm-update-all": "^1.0.1",
     "popper.js": "^1.16.0",
